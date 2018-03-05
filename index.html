@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="pl">
+    <base target="_blank">
+</head>
+
+<!-- HEADER -->
+
+<header class="menu">
+    <div class="logo">
+        <label for="checkBox" class="toggle"><img src="https://cdn.worldvectorlogo.com/logos/udacity.svg" alt="Pulse logo"></label>
+    </div>
+    <div class="intro">
+        <div class="name">
+            <p>Mateusz Stępień</p>
+        </div>
+        <div class="nickname">
+            <p>Front-End Ninja</p>
+        </div>
+    </div>
+</header>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+    <div class="sidebar-1">
+        <h2 class="toggle">◎</h2>
+    </div>
+    <div class="sidebar-2 clickable"><i class="ion-ios-cloud-outline"></i>
+        <p>THE STORY</p>
+    </div>
+    <div class="sidebar-3 clickable"><i class="ion-ios-photos-outline"></i>
+        <p>PHOTOS</p>
+    </div>
+    <div class="sidebar-4 clickable"><i class="ion-ios-videocam-outline"></i>
+        <p>VIDEOS</p>
+    </div>
+    <div class="sidebar-5 clickable"><i class="ion-ios-person-outline"></i>
+        <p>CONTACTS</p>
+    </div>
+    <div class="sidebar-6 clickable"><i class="ion-ios-briefcase-outline"></i>
+        <p>CV</p>
+    </div>
+</div>
+
+<!-- FULL SCREEN IMAGE -->
+
+<div class="slider">
+    <img src="http://www.color-hex.com/palettes/4668.png" alt="Palette" class="main_img">
+</div>
+
+<!--	LEFT COLUMN  -->
+
+<div id="container">
+    <div class="col left">
+        <div class="img-box">
+            <figure>
+                <img src="Responsive.PNG" alt="responsive" class="imgspecial">
+                <figcaption><a href="https://codepen.io/mojzesz/full/XZwrqB/">Resume</a></figcaption>
+            </figure>
+        </div>
+
+        <article>
+            <h2>&ldquo;Be responsi(ble)ve&ldquo;</h2>
+            <p>Responsive web design (RWD) is an approach to web design which makes web pages render well on a variety of devices and window or screen sizes. Recent work also considers the viewer proximity as part of the viewing context as an extension for RWD. Content, design and performance are necessary across all devices to ensure usability and satisfaction. </p>
+        </article>
+    </div>
+
+    <!--	MIDDLE COLUMN  -->
+
+    <div class="col middle">
+        <div class="img-box">
+            <figure>
+                <img src="Portal.PNG" alt="portal" class="imgspecial">
+                <figcaption><a href="https://codepen.io/mojzesz/full/eyxPeG/">Portal</a></figcaption>
+            </figure>
+        </div>
+
+        <article>
+            <h2>&ldquo;Stay co-nnected&rdquo;</h2>
+            <p>A web portal is a specially designed website that brings information from diverse sources, like emails, online forums and search engines, together in a uniform way. Usually, each information source gets its dedicated area on the page for displaying information (a portlet); often, the user can configure which ones to display. Variants include mashups and intranet "dashboards". </p>
+        </article>
+    </div>
+
+<!--	RIGHT COLUMN  -->
+
+    <div class="col right">
+        <div class="img-box">
+            <figure>
+                <img src="card.PNG" alt="Card" class="imgspecial">
+                <figcaption><a href="https://codepen.io/mojzesz/full/Leqzvv/">Card</a></figcaption>
+            </figure>
+        </div>
+
+        <article>
+            <h2>&ldquo;Poker star+&rdquo;</h2>
+            <p>Web and mobile apps are moving away from pages towards completely personalized experiences. These new experiences are built on an aggregation of many individual pieces of content. The way this content is now being presented is in the form of cards. The card-based interaction model is spreading pretty widely — from news sites to food delivery apps. </p>
+        </article>
+    </div>
+
+<!-- THE MODAL -->
+
+    <div id="myModal" class="modal">
+
+<!-- THE CLOSE BUTTON -->
+        
+        <span class="close">&times;</span>
+
+<!-- MODAL CONTENT (THE IMAGEE) -->
+        
+        <img class="modal-content" id="img01">
+
+<!-- MODAL CAPTION (IMAGE TEXT) -->
+        
+        <div id="caption"></div>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+// OPEN/CLOSE A SIDEBAR
+
+$('.toggle').click(function () {
+    $('.sidebar').toggleClass('left1');
+    $(this).toggleClass('left2');
+});
+
+// GET THE MODAL
+
+var modal = document.getElementById('myModal');
+
+// GET THE <span> ELEMENT THAT CLOSES THE MODAL
+
+var span = document.getElementsByClassName("close")[0];
+
+// WHEN THE USER CLICKS ON <span> (x), CLOSE THE MODAL
+
+span.onclick = function () { 
+    modal.style.display = "none";
+}
+
+// GET ALL IMAGES AND INSERT THE CLICKED IMAGE INSIDE THE MODAL
+// GET THE CONTENT OF THE IMAGE DESCRIPTION AND INSERT IT INSIDE THE MODAL IMAGE CAPTION
+
+var images = document.getElementsByClassName('imgspecial');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var i;
+for (i = 0; i < images.length; i++) {
+    images[i].onclick = function () {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        captionText.innerHTML = this.nextElementSibling.innerHTML;
+    }
+}
+    </script>
+    
+</body>
+</html>
