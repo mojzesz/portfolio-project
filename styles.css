@@ -6,7 +6,7 @@
     font-family: 'Lato', sans-serif;
 }
 
-/* HEADER */
+/*** HEADER ***/
 
 .menu {
     display: flex;
@@ -39,7 +39,7 @@
     width: auto;
 }
 
-/* SIDEBAR */
+/*** SIDEBAR ***/
 
 .sidebar {
     position: fixed;
@@ -106,7 +106,7 @@
     left: 130px;
 }
 
-/* SLIDER */
+/*** SLIDER ***/
 
 .slider {
     width: 100%;
@@ -121,7 +121,7 @@
     height: 250px;
 }
 
-/* COLUMNS */
+/*** COLUMNS ***/
 
 #container {
     display: flex;
