@@ -1,6 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-
 // OPEN/CLOSE A SIDEBAR
 
 $('.toggle').click(function () {
@@ -37,4 +34,3 @@ for (i = 0; i < images.length; i++) {
         captionText.innerHTML = this.nextElementSibling.innerHTML;
     }
 }
-    </script>
